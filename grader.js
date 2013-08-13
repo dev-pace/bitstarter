@@ -9,7 +9,11 @@ var HTMLFILE_DEFAULT = "index.html";
 var CHECKSFILE_DEFAULT = "checks.json";
 var URL_DEFAULT = "http://shrouded-forest-7560.herokuapp.com";
 
+<<<<<<< HEAD
 var callback = function(result) {
+=======
+var callback = function(result){
+>>>>>>> 16ea2c64522e4c4a15634ba12f23090101e6489f
     if (data instanceof Error){
 	sys.puts('Error: ' + results.message);
 	this.retry(5000);
@@ -59,10 +63,17 @@ var clone = function(fn) {
 
 if (require.main == module) {
     program
+<<<<<<< HEAD
 	.option('-c, --checks <check_file>', 'Path to checks.json', clone(assertFileExists), CHECKSFILE_DEFAULT)
 	.option('-f, --file <html_file>', 'Path to index.html', clone(assertFileExists), HTMLFILE_DEFAULT)
 	.option('-u, --url <url>', 'Path to url', clone(assertUrlExists), URL_DEFAULT)
 	.parse(process.argv);
+=======
+        .option('-c, --checks <check_file>', 'Path to checks.json', clone(assertFileExists), CHECKSFILE_DEFAULT)
+        .option('-f, --file <html_file>', 'Path to index.html', clone(assertFileExists), HTMLFILE_DEFAULT)
+        .option('-u, --url <url>', 'Path to url', clone(assertUrlExists), URL_DEFAULT)
+        .parse(process.argv);
+>>>>>>> 16ea2c64522e4c4a15634ba12f23090101e6489f
     if (program.url){
 	restler.get(program.url).on('complete', function(result){
 	    fs.writeFileSync('index.html', result);
@@ -76,7 +87,12 @@ if (require.main == module) {
 	var outJson = JSON.stringify(checkJson, null, 4);
 	console.log(outJson);
     }
+<<<<<<< HEAD
 }
+=======
+
+} 
+>>>>>>> 16ea2c64522e4c4a15634ba12f23090101e6489f
 else {
     exports.checkHtmlFile = checkHtmlFile;
 }
